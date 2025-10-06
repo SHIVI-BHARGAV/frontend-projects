@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Saabhi</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/svg+xml">
+
+  <!-- external CSS (your main CSS) -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- Boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Source+Sans+Pro:wght@600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Small additions CSS for Team & Forms (if you already put these rules in style.css you can remove this) -->
+  <style>
+    /* Team Section */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      text-align: center;
+      align-items: start;
+    }
+
+    .team-card {
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      background: var(--white);
+    }
+
+    .team-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .team-card h3 {
+      font-size: var(--fs-6);
+      margin-bottom: 6px;
+    }
+
+    .team-card p {
+      font-size: var(--fs-8);
+      color: var(--text-color-light);
+    }
+
+    /* Forms Section */
+    .forms .forms-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    @media (max-width: 992px) {
+      .forms .forms-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .forms form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .forms input[type="text"],
+    .forms input[type="email"],
+    .forms input[type="file"],
+    .forms textarea {
+      padding: 12px 14px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 1.6rem;
+      resize: vertical;
+    }
+
+    .forms button.btn {
+      align-self: start;
+      padding: 10px 28px;
+      border-radius: 0 25px;
+    }
+
+    /* Client logos grid reuse tweak */
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .clients-grid-item img {
+      max-width: 100%;
+      height: auto;
+      opacity: 0.85;
+      transition: .25s ease-in-out;
+    }
+
+    .clients-grid-item img:hover {
+      opacity: 1;
+      transform: translateY(-4px);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+
+    nav ul li {
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- #HEADER -->
+  <header class="header" data-header>
+    <div class="container">
+
+      <div class="overlay" data-overlay></div>
+
+      <a href="#" class="logo">
+        Digital <i>Saabhi</i>
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+          <a href="#" class="logo logo-dark">
+            Digital <i>Saabhi</i>
+          </a>
+          <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="#home" class="navbar-link" data-navbar-link>Home</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#about" class="navbar-link" data-navbar-link>About</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#services" class="navbar-link" data-navbar-link>Services</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#values" class="navbar-link" data-navbar-link>Values</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#team" class="navbar-link" data-navbar-link>Team</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#blog" class="navbar-link" data-navbar-link>Blog</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#forms" class="navbar-link" data-navbar-link>Contact / Apply</a>
+          </li>
+
+          <li class="search-box">
+            <button class="btn-search"><i class="bx bx-search"></i></button>
+            <input type="text" class="input-search" placeholder="Search...">
+          <li><button id="darkModeToggle" class="dark-toggle">🌙</button></li>
+        </ul>
+        </li>
+        </ul>
+
+      </nav>
+
+      <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+    </div>
+  </header>
+  
+
+  <main>
+    
+    <article>
+      
+      <!-- #HERO -->
+      <section class="hero" id="home">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <p class="hero-subtitle">Digital Saabhi Web software & digital marketing company’s.</p>
+
+            <h2 class="h2 hero-title">Creative ideas<i>.</i><br>
+              web and app development<i>.</i><br>
+              with Result - Driven Solutions<i>.</i>
+            </h2>
+
+            <p class="hero-text">
+              WE GROW YOUR BUSINESS WITH DIGITAL SOLUTIONS.
+              <a href="YOUR_GOOGLE_DRIVE_CV_LINK" target="_blank" rel="noopener">
+                REQUEST A QUOTE
+              </a>
+            </p>
+
+            <!-- Explore button -->
+            <button id="exploreVideoBtn" class="btn">Explore Our Work <i class='bx bxs-right-arrow'></i></button>
+
+          </div>
+
+          <figure class="hero-banner">
+            <img src="./assets/images/hero-img.svg" loading="lazy" alt="hero-banner" class="w-100"
+              style="margin-top: 30px; transform: scaleX(-1);">
+          </figure>
+
+        </div>
+      </section>
+
+      <!-- Video Modal -->
+      <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+          <span class="video-close">&times;</span>
+          <iframe id="heroVideo" width="800" height="450" src="" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <!--  video Modal CSS -->
+      <style>
+        .video-modal {
+          display: none;
+          position: fixed;
+          z-index: 10000;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.8);
+          justify-content: center;
+          align-items: center;
+        }
+
+        .video-modal-content {
+          position: relative;
+          max-width: 90%;
+          max-height: 80%;
+        }
+
+        .video-close {
+          position: absolute;
+          top: -20px;
+          right: -20px;
+          font-size: 2rem;
+          color: white;
+          cursor: pointer;
+        }
+      </style>
+
+
+      <!-- #HERO -->
+      <!-- <section class="hero" id="home">
+        <div class="container">
+
+          <div class="hero-content"> -->
+      <!-- 
+            <p class="hero-subtitle">Digital Saabhi Web software & digital marketing company’s.</p>
+
+            <h2 class="h2 hero-title">Creative ideas<i>.</i><br>
+              web and app development<i>.</i><br>
+              with Result - Driven Solutions<i>.</i>
+            </h2> -->
+
+      <!-- <p class="hero-text">
+              WE GROW YOUR BUSINESS WITH DIGITAL SOLUTIONS.
+              <a href="YOUR_GOOGLE_DRIVE_CV_LINK" target="_blank" rel="noopener">
+                REQUEST A QUOTE
+              </a>
+            </p>
+
+            <button class="btn">Explore Our Work <i class='bx bxs-right-arrow'></i></button>
+
+          </div>
+
+          <figure class="hero-banner">
+            <img src="./assets/images/hero-img.svg" loading="lazy" alt="hero-banner" class="w-100"
+              style="margin-top: 30px; transform: scaleX(-1);">
+          </figure>
+
+        </div>
+      </section> -->
+
+
+      <!-- #ABOUT -->
+      <section class="section about" id="about">
+        <div class="container">
+
+          <figure class="about-banner">
+            <img src="./assets/images/teamwork.svg" loading="lazy" alt="about banner"
+              style="padding-right: 10px; max-width: 530px; margin: 0 auto;" class="w-100">
+          </figure>
+
+          <div class="about-content">
+
+            <h2 class="h2 section-title underline">Dedicated Industry Experts With Proven Track Records.<i
+                class="dot">.</i>
+            </h2>
+
+            <p class="about-text">
+
+              Since in June 2022 - founder is Sachin Asvien, Digital Saabhi is
+              an India-based Software & Web Development & Digital marketing agency.
+              As an Expert industry leader, company cherishes all the challenges that
+              come in its way and stands company upon the pillars of creativity & innovation
+              to get through. their compelling services & disciplined delivery in the field
+              of Web Development, Mobile App Development, and Digital Marketing, Grow your
+              online presence & sales! brand awareness & loyalty campaigns to drive conversions.
+              Digital Saabhi Teams has a global reach with clients from countries like Canada,
+              USA and India. They hold expertise in providing tailor-made services
+              for companies & organizations of all sizes including Fortune 85+ clients.
+            </p>
+
+            <div class="about-buttons">
+              <a href="#services" class="btn ">Our Services</a>
+              <a href="#forms" class="btn invert-btn">Contact Us</a>
+            </div>
+
+            <ul class="stats-list">
+
+              <li class="stats-card">
+                <p class="h3 stats-title">100+</p>
+                <p class="stats-text">Satisfied Clients</p>
+              </li>
+
+              <li class="stats-card">
+                <p class="h3 stats-title">25+</p>
+                <p class="stats-text">Project Launched</p>
+              </li>
+
+              <li class="stats-card">
+                <p class="h3 stats-title">65</p>
+                <p class="stats-text">Years Completed</p>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- #SERVICE -->
+      <section class="section service" id="services">
+        <div class="container">
+
+          <h2 class="h2 section-title underline">Our Services<i class="dot">.</i></h2>
+
+          <ul class="service-list">
+
+            <li>
+              <div class="service-card">
+                <div class="card-icon">
+                  <i class='bx bx-pen'></i>
+                </div>
+
+                <h3 class="h3 title">Brand Designing <i class="dot">.</i></h3>
+
+                <p class="text">
+                  <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error labore id reiciendis quasi. -->
+                  Brand designing is the creative process of shaping a company’s visual
+                  identity. It includes crafting logos, color schemes, typography, and brand
+                  guidelines to reflect the brand’s values and personality. Effective brand design
+                  builds recognition, trust, and eWmotional connection with the audience,
+                  making a lasting impact across all platforms.
+                </p>
+
+                <button class="card-btn" aria-label="Show More">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+                <div class="card-icon">
+                  <i class='bx bx-code-curly'></i>
+                </div>
+
+                <h3 class="h3 title">Web Development/Design<i class="dot">.</i></h3>
+
+                <p class="text">
+                  Web development and design involve creating dynamic, responsive websites
+                  using tools like WordPress, Shopify, and full-stack custom coding
+                  (HTML, CSS, JavaScript, React, Node.js). This blend allows for tailored
+                  solutions—from eCommerce to business sites—ensuring user-friendly interfaces, powerful
+                  functionality, and a strong online presence that drives results and engagement
+                </p>
+
+                <button class="card-btn" aria-label="Show More">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+                <div class="card-icon">
+                  <i class='bx bx-desktop'></i>
+                </div>
+
+                <h3 class="h3 title">Finance<i class="dot">.</i></h3>
+
+                <p class="text">
+                  Finance services encompass a wide range of offerings, including financial planning,
+                  investment management, and risk assessment. Our team of experts works closely with clients
+                  to develop customized strategies that align with their financial goals and objectives.
+                  We leverage advanced analytics and market insights to drive informed decision-making
+                  and optimize financial performance.
+                </p>
+
+                <button class="card-btn" aria-label="Show More">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+      <!-- #VALUES -->
+      <section class="section values" id="values">
+        <div class="container">
+
+          <h2>Our Values<i class="dot">.</i></h2>
+
+          <ul class="values-list">
+            <li class="values-margin">
+              <div class="values-card">
+                <div class="icon">
+                  <ion-icon name="heart-outline"></ion-icon>
+                </div>
+
+                <div class="content">
+                  <h3 class="h3 title"><u>Be</u> Genuine</h3>
+                  <p class="text">Be sincere and honest to who you really are.</p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="values-card">
+                <div class="icon">
+                  <ion-icon name="extension-puzzle-outline"></ion-icon>
+                </div>
+
+                <div class="content">
+                  <h3 class="h3 title"><u>Be</u> Agile</h3>
+                  <p class="text">Have a creative, adaptable and user-focused mindset.</p>
+                </div>
+              </div>
+            </li>
+
+            <li class="values-margin">
+              <div class="values-card">
+                <div class="icon">
+                  <ion-icon name="analytics-outline"></ion-icon>
+                </div>
+
+                <div class="content">
+                  <h3 class="h3 title"><u>Be</u> Inclusive</h3>
+                  <p class="text">Be comprehensive and take everything into account.</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <figure class="values-banner">
+            <img src="./assets/images/values.svg" width="500" height="auto" loading="lazy" alt="values Banner"
+              class="w-100" style="width: 100%; max-width: 530px; padding: 10px;">
+          </figure>
+
+        </div>
+      </section>
+
+      <!-- #SATISFIED CLIENTS (added after values) -->
+      <section class="section clients" id="satisfied-clients">
+        <div class="container">
+
+          <h2 class="h2 section-title underline">Satisfied Clients<i class="dot">.</i></h2>
+
+          <div class="clients-grid">
+            <div class="clients-grid-item">
+              <img src="./assets/images/clients/linkedin.png" loading="lazy" alt="client" class="w-80">
+            </div>
+            <div class="clients-grid-item">
+              <img src="./assets/images/clients/Coca-Cola-Logo.png" loading="lazy" alt="client" class="w-80">
+            </div>
+            <div class="clients-grid-item">
+              <img src="./assets/images/clients/facebook.png" loading="lazy" alt="client" class="w-80">
+            </div>
+            <div class="clients-grid-item">
+              <img src="./assets/images/clients/intel.png" loading="lazy" alt="client" class="w-80">
+            </div>
+            <div class="clients-grid-item">
+              <img src="./assets/images/clients/youtub.png" loading="lazy" alt="client" class="w-80">
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- #TEAM -->
+
+      <section class="section team" id="team">
+        <div class="container">
+          <h2 class="h2 section-title underline">Meet Our Team<i class="dot">.</i></h2>
+
+          <!-- CEO Card (Full Width Highlighted) -->
+          <div class="ceo-highlight">
+            <div class="ceo-card">
+              <div class="ceo-img">
+                <img src="./assets/images/team6.jpg" alt="CEO">
+              </div>
+              <div class="ceo-info">
+                <h3>SACHIN ASVIEN</h3>
+                <p class="role">Founder & CEO</p>
+                <p>The visionary leader driving Digital Saabhi beyond limits with courage, passion & innovation.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team Grid -->
+          <div class="team-grid">
+            <div class="team-card">
+              <div class="card-inner">
+                <div class="card-front">
+                  <img src="./assets/images/team1.png" alt="MD">
+                  <h3>Abhishek Kumar</h3>
+                  <p class="role">Managing Director</p>
+                </div>
+                <div class="card-back">
+                  <p>A true pillar of strength — our MD leads with wisdom, dedication, and integrity. </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="team-card">
+              <div class="card-inner">
+                <div class="card-front">
+                  <img src="./assets/images/team3.jpg" alt="MD">
+                  <h3>NANDANI BHARDWAJ</h3>
+                  <p class="role">Hr manager</p>
+                </div>
+                <div class="card-back">
+                  <p>A strategic thinker and compassionate leader fostering innovation & collaboration. </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="team-card">
+              <div class="card-inner">
+                <div class="card-front">
+                  <img src="./assets/images/team5.jpg" alt="Engineer">
+                  <h3>DEEPAK YADUVANSHI</h3>
+                  <p class="role">Senior Software Engineer</p>
+                </div>
+                <div class="card-back">
+                  <p>A coding maestro crafting seamless digital experiences with precision. </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="team-card">
+              <div class="card-inner">
+                <div class="card-front">
+                  <img src="./assets/images/team2.jpg" alt="Auditor" class="team-img-fix">
+                  <h3>DAKSH MANARIYA</h3>
+                  <p class="role">Vander and operator</p>
+                </div>
+                <div class="card-back">
+                  <p>A detail-oriented professional ensuring compliance & accuracy. </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <style>
+        .section.team {
+          padding: 90px 20px;
+          background: #f5f7fa;
+          font-family: "Poppins", sans-serif;
+          color: #333;
+        }
+
+        .section-title {
+          text-align: center;
+          font-size: 2.5rem;
+          font-weight: 700;
+          margin-bottom: 60px;
+        }
+
+        /* .section-title.underline::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #e7ebf0;
+  margin: 10px auto 0;
+  border-radius: 2px; */
+        /* } */
+        /* Special fix only for Daksh image */
+        /* Daksh image fix */
+        .team-img-fix {
+          width: 140px;
+          height: 140px;
+          border-radius: 50%;
+          object-fit: cover;
+          object-position: 50% 20%;
+          /* x% y% → Y ko adjust kiya face ke liye */
+          border: 4px solid #fc9c0d;
+          margin-bottom: 15px;
+        }
+
+
+        /* CEO Highlight (Full Width) */
+        .ceo-highlight {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 60px;
+        }
+
+        .ceo-card {
+          display: flex;
+          gap: 25px;
+          align-items: center;
+          background: #fff;
+          padding: 19px 16px;
+          border-radius: 20px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+          border: 1px solid transparent;
+          background-image: linear-gradient(#fff, #fefefe), linear-gradient(135deg, #fec800, #e0e5e9);
+          background-origin: border-box;
+          background-clip: content-box, border-box;
+          width: 100%;
+        }
+
+        .ceo-img img {
+          width: 160px;
+          height: 160px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+
+        .ceo-info h3 {
+          font-size: 2.5rem;
+          margin: 0;
+        }
+
+        .ceo-info .role {
+          color: #00aeff;
+          font-weight: 700;
+          margin-bottom: 10px;
+        }
+
+        /* Team Grid */
+        .team-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 35px;
+        }
+
+        /* Card Flip Effect */
+        .team-card {
+          perspective: 1000px;
+        }
+
+        .card-inner {
+          position: relative;
+          width: 100%;
+          height: 350px;
+          /* Fixed card height */
+          transition: transform 0.8s;
+          transform-style: preserve-3d;
+        }
+
+        .team-card:hover .card-inner {
+          transform: rotateY(180deg);
+        }
+
+        .card-front,
+        .card-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          /* Fix overflow */
+          backface-visibility: hidden;
+          border-radius: 20px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 20px;
+        }
+
+        .card-front {
+          background: #fff;
+        }
+
+        .card-front img {
+          width: 140px;
+          height: 140px;
+          border-radius: 50%;
+          margin-bottom: 15px;
+          border: 4px solid #fc9c0d;
+          object-fit: cover;
+        }
+
+        .card-front h3 {
+          font-size: 1.5rem;
+          margin: 5px 0;
+        }
+
+        .card-front .role {
+          color: #ff7300;
+          font-weight: 600;
+        }
+
+        .card-back {
+          background: linear-gradient(135deg, #ffb703, #219ebc);
+          /* Better color contrast */
+          color: #fff;
+          transform: rotateY(180deg);
+          text-align: center;
+          padding: 25px;
+          font-size: 1rem;
+          line-height: 1.6;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+          .team-card {
+            height: 300px;
+            /* Adjust card height for smaller screens */
+          }
+
+          .card-inner {
+            transition: transform 0.6s;
+            /* Faster flip animation */
+          }
+
+          .card-front img,
+          .card-back img {
+            width: 120px;
+            height: 120px;
+          }
+
+          .card-front h3 {
+            font-size: 1.25rem;
+          }
+
+          .card-back {
+            padding: 20px;
+          }
+        }
+
+        .whatsapp-float {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          background: #25d366;
+          color: white;
+          padding: 12px 20px;
+          border-radius: 50px;
+          text-decoration: none;
+          font-weight: bold;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+          z-index: 9999;
+          transition: 0.3s;
+        }
+
+        .whatsapp-float:hover {
+          background: #128c7e;
+        }
+
+        body.dark-mode {
+          background: #121212;
+          color: #f5f5f5;
+        }
+
+        body.dark-mode header,
+        body.dark-mode footer {
+          background-color: #1e1e1e;
+        }
+
+        body.dark-mode nav a {
+          color: #ddd;
+        }
+
+        body.dark-mode h2 {
+          color: #66aaff;
+        }
+
+        body.dark-mode section {
+          background: #1b1b1b;
+        }
+      </style>
+
+
+
+      <!-- #BLOG -->
+      <section class="section blog" id="blog">
+        <div class="container">
+
+          <h2 class="h2 section-title underline">Our Blog & News<i class="dot">.</i></h2>
+
+          <ul class="blog-list">
+
+            <li>
+              <div class="blog-card">
+                <figure class="banner">
+                  <a href="#">
+                    <img src="./assets/images/blog-3.jpg" width="750" height="350" loading="lazy"
+                      alt="Fusce sem ligula." class="img-cover">
+                  </a>
+                </figure>
+
+                <div class="content">
+
+                  <h3 class="h3 title">
+                    <a href="#"> Case Study: Crafting SEO-Friendly Web Solutions</a>
+                  </h3>
+
+                  <p class="text">
+
+
+                    Explore how Digital Saabhi transformed digital presence through powerful, SEO-optimized web
+                    development—enhancing visibility, speed & user experience. Result: Higher search rankings, better
+                    engagement, and boosted conversions! Case Study by Digital Saabhi </p>
+
+                  <div class="meta">
+
+                    <div class="publish-date">
+                      <ion-icon name="time-outline"></ion-icon>
+
+                      <time datetime="2022-03-07">1 July, 2022</time>
+                    </div>
+
+                    <button class="comment" aria-label="Comment">
+                      <ion-icon name="chatbubble-outline"></ion-icon>
+
+                      <data value="15">15</data>
+                    </button>
+
+                    <button class="share" aria-label="Share">
+                      <ion-icon name="share-social-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+                <figure class="banner">
+                  <a href="#">
+                    <img src="./assets/images/blog-4.jpg" width="750" height="350" loading="lazy"
+                      alt="Donec feugiat mollis nisi." class="img-cover">
+                  </a>
+                </figure>
+
+                <div class="content">
+
+                  <h3 class="h3 title">
+                    <a href="#"> Case Study: Design That Speaks Volumes</a>
+                  </h3>
+
+                  <p class="text">
+
+
+
+                    Discover how Digital Saabhi used creative design thinking and visual storytelling to elevate brand
+                    identity and user engagement. From concept to conversion – we turned pixels into powerful
+                    impressions. Case Study by Digital Saabhi </p>
+
+                  <div class="meta">
+
+                    <div class="publish-date">
+                      <ion-icon name="time-outline"></ion-icon>
+
+                      <time datetime="2022-03-07">1 July, 2022</time>
+                    </div>
+
+                    <button class="comment" aria-label="Comment">
+                      <ion-icon name="chatbubble-outline"></ion-icon>
+
+                      <data value="15">15</data>
+                    </button>
+
+                    <button class="share" aria-label="Share">
+                      <ion-icon name="share-social-outline"></ion-icon>
+                    </button>
+
+                  </div>
+
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+      <!-- #FORMS -->
+      <section class="section forms" id="forms">
+        <div class="form-container">
+
+          <h2 class="form-title">Client Form<i class="dot">.</i></h2>
+
+          <form id="clientForm" class="client-form" enctype="multipart/form-data">
+
+            <!-- Full Name -->
+            <input type="text" name="fullname" placeholder="Full Name" required>
+
+            <!-- Email -->
+            <input type="email" name="email" placeholder="Email Address" required>
+
+            <!-- Phone Number -->
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+
+            <!-- Select Service Category -->
+            <select name="service" required>
+              <option value="">-- Select Service Category --</option>
+              <option value="web">Web Development</option>
+              <option value="design">Graphic Design</option>
+              <option value="seo">SEO Optimization</option>
+              <option value="marketing">Digital Marketing</option>
+            </select>
+
+            <!-- Upload File -->
+            <label class="file-label">Upload File (pdf/doc/image)</label>
+            <input type="file" name="file" accept=".pdf,.doc,.docx,.jpg,.png" required>
+
+            <!-- Message -->
+            <textarea name="message" placeholder="Write your message..." rows="5" required></textarea>
+
+            <!-- Submit -->
+            <button type="submit" class="btn">Submit</button>
+          </form>
+
+        </div>
+      </section>
+
+      <style>
+        /* Full Page Center */
+        .forms {
+          min-height: 100vh;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: linear-gradient(135deg, #eff3f7, #c8dce2);
+          padding: 20px;
+        }
+
+        /* Form Container */
+        .form-container {
+          width: 100%;
+          max-width: 550px;
+          background: #e9f5d4;
+          padding: 2.5rem;
+          border-radius: 40px;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+          animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Title */
+        .form-title {
+          text-align: center;
+          margin-bottom: 1.5rem;
+          font-size: 2rem;
+          font-weight: 600;
+          color: #333;
+          position: relative;
+        }
+
+        .form-title .dot {
+          color: #ffa600;
+        }
+
+        /* Inputs */
+        .client-form {
+          display: flex;
+          flex-direction: column;
+          gap: 1.2rem;
+        }
+
+        .client-form input,
+        .client-form select,
+        .client-form textarea {
+          padding: 14px 16px;
+          font-size: 1rem;
+          border: 1px solid #ccc;
+          border-radius: 10px;
+          outline: none;
+          transition: all 0.3s ease;
+        }
+
+        /* Focus Effect */
+        .client-form input:focus,
+        .client-form select:focus,
+        .client-form textarea:focus {
+          border-color: #0077ff;
+          box-shadow: 0 0 12px rgba(0, 119, 255, 0.3);
+          transform: scale(1.02);
+        }
+
+        /* File Label */
+        .file-label {
+          font-size: 1rem;
+          color: #444;
+          font-weight: 500;
+          margin-top: 10px;
+        }
+
+        /* Button */
+        .client-form .btn {
+          padding: 14px;
+          background: #31eea6;
+          color: white;
+          font-size: 1.1rem;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .client-form .btn:hover {
+          background: #8f8108;
+          transform: translateY(-2px);
+          box-shadow: 0px 6px 15px rgba(255, 187, 0, 0.4);
+        }
+
+        /* Fade In Effect */
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      </style>
+
+
+      <!-- FOOTER -->
+      <footer class="footer">
+
+        <div class="footer-top section">
+          <div class="container">
+
+            <div class="footer-brand">
+
+              <a href="#" class="logo">
+                Digital <i>Saabhi</i>
+              </a>
+              <p class="text">
+                ""Since in June 2022 - founder is Sachin Asvien, Digital Saabhi is an India-based Software & Web
+                Development
+                & Digital marketing agency. As an Expert industry leader, company cherishes all the challenges that come
+                in
+                its way and stands company upon the pillars of creativity & innovation to get through.""
+              </p>
+
+              <ul class="social-list">
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#" class="social-link">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a>
+                </li>
+
+              </ul>
+
+            </div>
+
+            <ul class="footer-list">
+              <li>
+                <p class="footer-list-title">Our links</p>
+              </li>
+              <li><a href="#" class="footer-link">Home</a></li>
+              <li><a href="#" class="footer-link">About Us</a></li>
+              <li><a href="#" class="footer-link">Services</a></li>
+              <li><a href="#" class="footer-link">Blog</a></li>
+            </ul>
+
+            <ul class="footer-list">
+              <li>
+                <p class="footer-list-title">Our Services</p>
+              </li>
+              <li><a href="#" class="footer-link">Web Development</a></li>
+              <li><a href="#" class="footer-link">Graphic Design</a></li>
+              <li><a href="#" class="footer-link">SEO Services</a></li>
+              <li><a href="#" class="footer-link">Digital Marketing</a></li>
+            </ul>
+
+            <ul class="footer-list">
+              <li>
+                <p class="footer-list-title">Other links</p>
+              </li>
+              <li><a href="#" class="footer-link">FAQ</a></li>
+              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+              <li><a href="#" class="footer-link">Support</a></li>
+            </ul>
+
+            <ul class="footer-list">
+              <li>
+                <p class="footer-list-title">Contact Us</p>
+              </li>
+
+              <li class="footer-item">
+                <div class="footer-item-icon">
+                  <ion-icon name="call"></ion-icon>
+                </div>
+                <div>
+                  <a href="tel:+91 628-092-0350" class="footer-item-link">+91 628-092-0350</a>
+                  <a href="tel:+91 783-741-6709" class="footer-item-link">+91 783-741-6709</a>
+                </div>
+              </li>
+
+              <li class="footer-item">
+                <div class="footer-item-icon">
+                  <ion-icon name="mail"></ion-icon>
+                </div>
+                <div>
+                  <a href="mailto:digitalsaabhi_official@outlook.com"
+                    class="footer-item-link">digitalsaabhi_official@outlook.com</a>
+                  <a href="mailto:sachinasvien@gmail.com" class="footer-item-link">info@example.com</a>
+                </div>
+              </li>
+
+              <li class="footer-item">
+                <div class="footer-item-icon">
+                  <ion-icon name="location"></ion-icon>
+                </div>
+                <address class="footer-item-link">
+                  B. 666, Patel Chowk, E Block, SGM Nagar, Sector 48, Faridabad, Haryana
+                </address>
+              </li>
+
+            </ul>
+            <a href="https://wa.me/7837416709" target="_blank" class="whatsapp-float">
+              💬 Chat on WhatsApp
+            </a>
+
+          </div>
+          <div class="footer-bottom">
+            <p class="copyright">
+              &copy; 2024 <a href="https://saimcode.vercel.app" class="copyright-link">Digital Saabhi</a>. All Right
+              Reserved
+            </p>
+          </div>
+        </div>
+
+      </footer>
+
+      <!-- GO TO TOP -->
+      <a href="#top" class="go-top active" aria-label="Go To Top" data-go-top>
+        <ion-icon name="arrow-up-outline"></ion-icon>
+      </a>
+
+      <!-- external script (your main script) -->
+      <script src="./assets/js/script.js"></script>
+
+
+
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+</body>
+
+</html>
